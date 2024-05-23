@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/78c10999a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .log-box {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .box {
+        width: 817px;
+        height: 516px;
+        background: #ffffff;
+        box-shadow: -4.44444px 4.44444px 8.88889px rgba(0, 0, 0, 0.25),
+          4.44444px -4.44444px 8.88889px rgba(0, 0, 0, 0.1);
+        border-radius: 35.5556px;
+        overflow: hidden;
+      }
+      .sign-in h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        color: #1f1f1f;
+        margin-bottom: 30px;
+      }
+      .social-log {
+        margin-bottom: 18px;
+      }
+      .fb {
+        background: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 8.03571px;
+        width: 38.57px;
+        height: 38.57px;
+        margin-right: 20px;
+      }
+      .fb i {
+        color: rgb(0, 110, 255);
+        font-size: 20px;
+      }
+      .gl i {
+        color: red;
+        font-size: 20px;
+      }
+      .gl {
+        background: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 8.03571px;
+        width: 38.57px;
+        height: 38.57px;
+      }
+      .fb button,
+      .gl button {
+        outline: 0;
+        border: 0;
+        background: none;
+      }
+      .sign-in-form p {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.45);
+        margin-bottom: 10px;
+      }
+      .input-form {
+        width: 100%;
+      }
+      .input-form input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        border: 1px solid #ddd;
+        padding: 8px 8px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #868484;
+        background-color: #eee;
+      }
+      .input-form input[type="text"] {
+        margin-bottom: 18px;
+        display: none;
+        transition: 0.3s;
+      }
+      .input-form input[type="email"] {
+        margin-bottom: 18px;
+      }
+      .input-form input[type="password"] {
+        margin-bottom: 18px;
+      }
+      .sign-in-form .input-form p {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .sign-in-form .input-form p a {
+        color: rgba(0, 0, 0, 0.45);
+      }
+      .sign-in-form .input-form .button {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sign-in-form .input-form .button button {
+        outline: 0;
+        border: 0;
+        background: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        width: 153.78px;
+        height: 40px;
+        background: #1f1f1f;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8.88889px;
+      }
+      .sign-up-text {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        z-index: 1;
+      }
+      .sign-up-text .text h1 {
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 33px;
+      }
+      .sign-up-text .text p {
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+      .sign-up-text .text .button2 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sign-up-text .text .button2 button {
+        outline: 0;
+        border: 0;
+        background: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        width: 153.78px;
+        height: 40px;
+        background: rgb(119, 20, 211);
+        border: 3px solid #ffffff;
+        border-radius: 8.88889px;
+      }
+      .sign-up-text {
+        position: relative;
+      }
+      .sign-up-text::after {
+        content: "";
+        width: 100%;
+        height: 111%;
+        top: 0;
+        left: 0;
+        background-color: rgb(153, 58, 241);
+        position: absolute;
+        z-index: -1;
+        border-radius: 35.5556px;
+      }
+      .pading-my {
+        padding: 3rem !important;
+        box-sizing: border-box;
+      }
+      @media (max-width: 991px) {
+        .log-box {
+          width: 100%;
+          height: 100vh;
+          display: grid;
+          place-items: center;
+        }
+        .box {
+          width: 100%;
+          height: 516px;
+          background: #ffffff;
+          box-shadow: -4.44444px 4.44444px 8.88889px rgba(0, 0, 0, 0.25),
+            4.44444px -4.44444px 8.88889px rgba(0, 0, 0, 0.1);
+          overflow: visible;
+        }
+        .sign-up-text {
+          width: 100%;
+          height: 400px;
+          display: grid;
+          place-items: center;
+          z-index: 1;
+        }
+        .sign-up-text::after {
+          content: "";
+          width: 100%;
+          height: 400px;
+          top: 0;
+          left: 0;
+          background-color: rgb(153, 58, 241);
+          position: absolute;
+          z-index: -1;
+          border-radius: 35px;
+        }
+        .sign-up-bg {
+          margin-top: 70px !important;
+        }
+      }
+      .container {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="login-area">
+      <div class="container">
+        <div class="log-box">
+          <div class="box">
+            <div class="row">
+              <div class="col-lg-6 pading-my">
+                <div class="sign-in">
+                  <h1 id="headingText">Sign In</h1>
+                  <div class="social-log d-flex justify-content-center">
+                    <div
+                      class="fb d-flex justify-content-center align-items-center"
+                    >
+                      <button><i class="fa-brands fa-facebook-f"></i></button>
+                    </div>
+                    <div
+                      class="gl d-flex justify-content-center align-items-center"
+                    >
+                      <button><i class="fa-brands fa-google"></i></button>
+                    </div>
+                  </div>
+                  <div class="sign-in-form">
+                    <p class="text-center">or use your email password</p>
+                    <div class="input-form">
+                      <input id="nameInput" type="text" placeholder="Name" />
+                      <input id="email" type="email" placeholder="Email" />
+                      <input id="pass" type="password" placeholder="Password" />
+                      <p>Forgot Your <a href="#">Password?</a></p>
+                      <div class="button">
+                        <button id="formBtn">SIGN IN</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 sign-up-bg">
+                <div class="sign-up-text">
+                  <div class="text">
+                    <h1>Welcome Back !</h1>
+                    <p class="text-center">
+                      <span id="welcomeTex">Register</span> with your personal
+                      account to use this apps
+                    </p>
+                    <div class="button2">
+                      <button id="signUpBtn">SIGN UP</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const signUpBtn = document.getElementById("signUpBtn");
+      signUpBtn.addEventListener("click", () => {
+        const headingText = document.getElementById("headingText");
+        const welcomeTex = document.getElementById("welcomeTex");
+        const formBtn = document.getElementById("formBtn");
+        const nameInput = document.getElementById("nameInput");
+        if (signUpBtn.innerText === "SIGN UP") {
+          signUpBtn.innerText = "SIGN IN";
+          headingText.innerText = "Sign Up";
+          welcomeTex.innerText = "Login";
+          formBtn.innerText = "CREATE ACCOUNT";
+          nameInput.style.display = "block";
+        } else if (signUpBtn.innerText === "SIGN IN") {
+          signUpBtn.innerText = "SIGN UP";
+          headingText.innerText = "Sign In";
+          welcomeTex.innerText = "Register";
+          formBtn.innerText = "SIGN IN";
+          nameInput.style.display = "none";
+        }
+      });
+
+      const login = document.getElementById("formBtn");
+      login.addEventListener("click", () => {
+        const email = document.getElementById("email").value;
+        const pass = document.getElementById("pass").value;
+        const btnCk = formBtn.innerText;
+        if (email == "Admin" && pass == "Admin") {
+          if (btnCk == "SIGN IN") {
+            window.open("cart.html", "_self");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
